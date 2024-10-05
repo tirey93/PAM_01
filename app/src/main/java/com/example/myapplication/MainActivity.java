@@ -20,19 +20,23 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         mButton =  findViewById(R.id.button);//przypisanie przycisku z view
         vText =  findViewById(R.id.text);
 
+        if (savedInstanceState != null){
+           numbers = savedInstanceState.getInt("text");
+        }
         mButton.setOnClickListener(v -> {
             vText.setText("Clicked " + numbers + " times");
             numbers++;
         });
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putInt("text", numbers);
+        super.onSaveInstanceState(outState);
     }
 }
