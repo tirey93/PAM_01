@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     private Button bCounter;
     private Button bActivity2;
     private Button bFinish;
+    private Button bEqual;
     private TextView vText;
     private int numbers = 0;
 
@@ -22,25 +23,35 @@ public class MainActivity extends AppCompatActivity {
         bCounter =  findViewById(R.id.button);//przypisanie przycisku z view
         bActivity2 =  findViewById(R.id.button2);
         bFinish =  findViewById(R.id.buttonFinish);
+        bEqual =  findViewById(R.id.buttonEqual);
         vText =  findViewById(R.id.text);
 
         if (savedInstanceState != null){
            numbers = savedInstanceState.getInt("text");
         }
-        bCounter.setOnClickListener(v -> {
-            vText.setText("Clicked " + numbers + " times");
-            numbers++;
-        });
+        if(bCounter != null)
+            bCounter.setOnClickListener(v -> {
+                vText.setText("Clicked " + numbers + " times");
+                numbers++;
+            });
 
-        bActivity2.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-            startActivity(intent);
-//            finish();
-        });
+        if(bActivity2 != null)
+            bActivity2.setOnClickListener(v -> {
+                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                startActivity(intent);
+    //            finish();
+            });
 
-        bFinish.setOnClickListener(v -> {
-            finish();
-        });
+        if(bEqual != null)
+            bEqual.setOnClickListener(v -> {
+                Intent intent = new Intent(MainActivity.this, MainActivity3.class);
+                startActivity(intent);
+            });
+
+        if(bFinish != null)
+            bFinish.setOnClickListener(v -> {
+                finish();
+            });
 
     }
 
