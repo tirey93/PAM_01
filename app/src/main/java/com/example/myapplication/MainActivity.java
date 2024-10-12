@@ -1,19 +1,16 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button mButton;
+    private Button bCounter;
+    private Button bActivity2;
     private TextView vText;
     private int numbers = 0;
 
@@ -21,15 +18,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mButton =  findViewById(R.id.button);//przypisanie przycisku z view
+        bCounter =  findViewById(R.id.button);//przypisanie przycisku z view
+        bActivity2 =  findViewById(R.id.button2);
         vText =  findViewById(R.id.text);
 
         if (savedInstanceState != null){
            numbers = savedInstanceState.getInt("text");
         }
-        mButton.setOnClickListener(v -> {
+        bCounter.setOnClickListener(v -> {
             vText.setText("Clicked " + numbers + " times");
             numbers++;
+        });
+
+        bActivity2.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+            startActivity(intent);
         });
 
     }
