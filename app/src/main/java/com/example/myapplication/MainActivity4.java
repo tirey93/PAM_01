@@ -27,7 +27,7 @@ public class MainActivity4 extends AppCompatActivity {
         vText = findViewById(R.id.textViewViewModel1);
         ViewModel1 vm = new ViewModelProvider(this).get(ViewModel1.class);
         vText.setText(String.valueOf(vm.counter));
-//
+
         if(bButton != null)
             bButton.setOnClickListener(v -> {
                 vm.counter++;

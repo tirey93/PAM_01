@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private Button bFinish;
     private Button bEqual;
     private Button bViewModel;
+    private Button bFragment;
     private TextView vText;
     private int numbers = 0;
 
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         bFinish =  findViewById(R.id.buttonFinish);
         bEqual =  findViewById(R.id.buttonEqual);
         bViewModel =  findViewById(R.id.buttonViewModel);
+        bFragment =  findViewById(R.id.buttonFragment);
         vText =  findViewById(R.id.text);
 
         if (savedInstanceState != null){
@@ -58,6 +60,12 @@ public class MainActivity extends AppCompatActivity {
         if(bViewModel != null)
             bViewModel.setOnClickListener(v -> {
                 Intent intent = new Intent(MainActivity.this, MainActivity4.class);
+                startActivity(intent);
+            });
+
+        if(bFragment != null)
+            bFragment.setOnClickListener(v -> {
+                Intent intent = new Intent(MainActivity.this, MainActivity5.class);
                 startActivity(intent);
             });
 
