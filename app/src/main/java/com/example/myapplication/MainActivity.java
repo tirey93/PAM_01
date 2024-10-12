@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button bCounter;
     private Button bActivity2;
+    private Button bFinish;
     private TextView vText;
     private int numbers = 0;
 
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         bCounter =  findViewById(R.id.button);//przypisanie przycisku z view
         bActivity2 =  findViewById(R.id.button2);
+        bFinish =  findViewById(R.id.buttonFinish);
         vText =  findViewById(R.id.text);
 
         if (savedInstanceState != null){
@@ -33,6 +35,11 @@ public class MainActivity extends AppCompatActivity {
         bActivity2.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, MainActivity2.class);
             startActivity(intent);
+//            finish();
+        });
+
+        bFinish.setOnClickListener(v -> {
+            finish();
         });
 
     }
