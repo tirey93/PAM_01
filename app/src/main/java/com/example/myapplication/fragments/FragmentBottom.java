@@ -17,7 +17,7 @@ public class FragmentBottom extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_bottom, container, false);
-
+        //viewPager2 na teamsach sprawdzić zadanie. Przygotować widok z ViewHolderem. Może się pryzydać do aplikacji pogodowej.
         return view;
     }
 }
