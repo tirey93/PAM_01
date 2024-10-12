@@ -57,4 +57,14 @@
         app:layout_constraintEnd_toEndOf="@+id/buttonFinish"
         app:layout_constraintTop_toTopOf="@+id/button" />
 
+    <Button
+        android:id="@+id/buttonViewModel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="224dp"
+        android:text="View model"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/buttonEqual" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
